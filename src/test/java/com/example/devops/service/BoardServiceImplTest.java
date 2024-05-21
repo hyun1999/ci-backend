@@ -24,7 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardServiceImplTest {
     @Mock private BoardRepository boardRepository;
     @InjectMocks private BoardServiceImpl boardService;
-
+//
 
     @Test
     void getById() {
