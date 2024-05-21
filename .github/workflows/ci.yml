@@ -29,6 +29,7 @@ jobs:
       
     - name: chmod
       run: chmod 744 gradlew #실행 파일로 만들어주기
+      if: runner.os == 'ubuntu' || runner.os == 'macos'
     
     - name: Build with Gradle Wrapper
       run: ./gradlew build
