@@ -32,6 +32,7 @@ class BoardServiceImplTest {
         BDDMockito.given(boardRepository.findById(1L))
                 .willReturn(Optional.of(board));
         BoardResponse byId = boardService.getById(1L);
+        //boardService를 탈때 boardRepository를 타게 되는데 이걸 안타도록 하려고 given과 willReturn에서 boardRepository.findById에 대한 결과값을 내가 지정해줌.
 
 //        행위 검증
         Mockito.verify(boardRepository, Mockito.times(1)).findById(1L);
@@ -74,4 +75,7 @@ class BoardServiceImplTest {
 
         Mockito.verify(boardRepository, Mockito.times(1)).save(entity);
     }
+
+
+
 }

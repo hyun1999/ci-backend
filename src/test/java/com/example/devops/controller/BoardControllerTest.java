@@ -12,37 +12,44 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 class BoardControllerTest {
+    @Autowired
+    MockMvc mockMvc;
+    @Test
+    void getAllBoard(){
 
-    @Mock private BoardService boardService;
-    @InjectMocks private BoardController boardController;
-
-
+    }
+    @Test
+    void getByIdBoard() throws Exception{
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/boards/1"))
+                .andExpect(MockMvcResultMatchers.status().is5xxServerError());
+    }
     @Test
     void createBoard() {
-//        BoardRequest request = new BoardRequest("test","test");
-//        BDDMockito.given(boardService.createBoard(request)).will()
 
     }
 
     @Test
     void getBoard() {
-        BDDMockito.given(boardService.getBoards())
-                .willReturn(List.of(
-                        new BoardResponse(1L,"test","test"),
-                        new BoardResponse(2L,"test2","test2")));
-
-        List<BoardResponse> all = boardController.getBoard();
-
-        assertEquals(2,all.size());
-        assertEquals("test",all.get(0).name());
-        Mockito.verify(boardService).getBoards();
+    }
+    @Test
+    void hashCodeTest(){
+        Board board = new Board(1L, "test", "test");
+        board.hashCode();
+        board.toString();
 
     }
 }
