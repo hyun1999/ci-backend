@@ -15,7 +15,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
       - name: hello
         run: echo "hello"
   #   - uses: actions/checkout@v4
