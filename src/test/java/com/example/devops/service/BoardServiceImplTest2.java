@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest //spring bean객체들을 사용할 수 있음
+// 직접 bean을 가져와서 사용하기 때문에 시간이 많이 걸린다는 단점 대신 정확할 수 있음
 public class BoardServiceImplTest2 {
     @Autowired
     private BoardService boardService;
