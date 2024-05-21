@@ -25,7 +25,7 @@ class BoardServiceImplTest {
     @Mock private BoardRepository boardRepository;
     @InjectMocks private BoardServiceImpl boardService;
 
-    //
+
     @Test
     void getById() {
         Board board = new Board(1L, "test", "test");
