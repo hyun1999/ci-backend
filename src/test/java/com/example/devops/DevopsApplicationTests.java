@@ -11,6 +11,10 @@ class DevopsApplicationTests {
 	String username;
 
 	@Test
+	void main(){
+		DevopsApplication.main(new String[]{});
+	}
+	@Test
 	void contextLoads() {
 	}
 
