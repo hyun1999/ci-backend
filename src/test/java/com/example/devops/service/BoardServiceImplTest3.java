@@ -3,6 +3,7 @@ package com.example.devops.service;
 import com.example.devops.domain.entity.Board;
 import com.example.devops.repository.BoardRepository;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;
@@ -20,6 +21,7 @@ public class BoardServiceImplTest3 {
     @Mock private BoardRepository boardRepository;
 
     @Test
+    @DisplayName("Id로 삭제하는데 Id가 있을 때")
     void deleteByIdTest(){
 //        case 1: id 가 있을 때
         Long id = 1L;
@@ -32,6 +34,7 @@ public class BoardServiceImplTest3 {
     }
 
     @Test
+    @DisplayName("Id로 삭제하는데 Id가 없을 때")
     void deleteByIdFail(){
 //        case 2: id 가 없을 때
         Long id = 50000L;

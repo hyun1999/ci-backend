@@ -5,6 +5,7 @@ import com.example.devops.domain.request.BoardRequest;
 import com.example.devops.domain.response.BoardResponse;
 import com.example.devops.service.BoardService;
 import com.example.devops.service.BoardServiceImpl;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -56,7 +57,12 @@ class BoardControllerTest {
 
     @Test
     void createBoardTest() {
-//        BDDMockito.given(boardService.createBoard(new BoardRequest("test","test")));
+        BoardRequest request = new BoardRequest("test1", "test1");
+        BDDMockito.doNothing()
+                .when(boardService)
+                .createBoard(request);
+        ObjectMapper objectMapper = new ObjectMapper();
+
     }
 
     @Test
