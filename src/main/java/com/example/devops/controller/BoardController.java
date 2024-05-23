@@ -4,12 +4,12 @@ import com.example.devops.domain.request.BoardRequest;
 import com.example.devops.domain.response.BoardResponse;
 import com.example.devops.service.BoardService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api/boards")
 @CrossOrigin(origins = "http://localhost:5173"
         ,methods = {
@@ -20,6 +20,10 @@ import java.util.List;
         RequestMethod.OPTIONS})
 public class BoardController {
     private final BoardService boardService;
+
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
+    }
 
     @PostMapping
     public void createBoard(@RequestBody BoardRequest req){
