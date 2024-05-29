@@ -32,6 +32,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BoardControllerTest {
     @MockBean
     private BoardServiceImpl boardService;
+    // 인터페이스를 쓰면 생성하지 못하기 때문에 impl을 사용한다.
     @Autowired
     private MockMvc mockMvc;
 

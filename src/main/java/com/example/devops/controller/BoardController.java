@@ -11,13 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/boards")
-@CrossOrigin(origins = "http://localhost:5173"
+@CrossOrigin(origins = "*"
         ,methods = {
         RequestMethod.GET,
         RequestMethod.POST,
         RequestMethod.DELETE,
         RequestMethod.PUT,
-        RequestMethod.OPTIONS})
+        RequestMethod.OPTIONS} ,allowedHeaders = "*")
 public class BoardController {
     private final BoardService boardService;
 
