@@ -35,7 +35,7 @@ class BoardControllerTest {
     // 인터페이스를 쓰면 생성하지 못하기 때문에 impl을 사용한다.
     @Autowired
     private MockMvc mockMvc;
-//
+
     @Test
     void getAllBoardTest() throws Exception {
 //        given
