@@ -1,7 +1,7 @@
 # FROM = base image
 FROM openjdk:17-slim
 # *T.jar를 app.jar로 복사 (내꺼에서 이미지로 복사하기)
-COPY ./build/libs/*T.jar app.jar
+COPY build/libs/*T.jar app.jar
 # RUN이라는 명령어
 RUN ["java","-version"]
 #ENV profiles prod
