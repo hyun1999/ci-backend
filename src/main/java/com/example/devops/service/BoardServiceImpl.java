@@ -35,7 +35,7 @@ public class BoardServiceImpl implements BoardService{
         List<Board> all = boardRepository.findAll();
         return all.stream().map(BoardResponse::from).toList();
     }
-//
+
     @Override
     public void deleteById(Long id) {
         Optional<Board> byId = boardRepository.findById(id);
@@ -43,7 +43,6 @@ public class BoardServiceImpl implements BoardService{
         boardRepository.deleteById(id);
 
     }
-
 
     public BoardResponse getById(long id) {
         Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
