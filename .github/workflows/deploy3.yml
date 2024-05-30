@@ -13,14 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # 이게 ssh username@ip
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          script: |
-            cd ci-backend
-            git pull
-            sh gradle build
-            nohup java -jar build/libs/*T.jar >/dev/null 2>&1 &
+      - name: build with gradle wrapper
+        run: |
+          cd ci-backend
+          git pull
+          sh gradle build
+          nohup java -jar build/libs/*T.jar >/dev/null 2>&1 &
 
       - name: Docker Login
         uses: docker/login-action@v3.2.0
