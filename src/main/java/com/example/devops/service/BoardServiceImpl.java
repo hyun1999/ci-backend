@@ -44,7 +44,6 @@ public class BoardServiceImpl implements BoardService{
 
     }
 
-
     public BoardResponse getById(long id) {
         Board board = boardRepository.findById(id).orElseThrow(IllegalArgumentException::new);
         return BoardResponse.from(board);
