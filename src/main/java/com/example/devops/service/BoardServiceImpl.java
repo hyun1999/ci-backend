@@ -24,7 +24,7 @@ public class BoardServiceImpl implements BoardService{
     public void createBoard(BoardRequest req) {
         boardRepository.save(req.toEntity());
     }
-
+//
     @Override
     public BoardResponse getById(Long id) {
         return null;
