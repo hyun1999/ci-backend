@@ -35,7 +35,7 @@ public class BoardServiceImpl implements BoardService{
         List<Board> all = boardRepository.findAll();
         return all.stream().map(BoardResponse::from).toList();
     }
-
+//
     @Override
     public void deleteById(Long id) {
         Optional<Board> byId = boardRepository.findById(id);
